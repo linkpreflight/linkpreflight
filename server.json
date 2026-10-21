@@ -1,9 +1,10 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-09-29/server.schema.json",
-  "name": "dev.linkpreflight/linkpreflight",
+  "name": "io.github.linkpreflight/linkpreflight",
   "title": "LinkPreflight",
   "description": "Check a URL before your agent clicks, cites, or fetches it: status, redirects, dead/parked, type/size, llms.txt, phishing flags.",
   "version": "0.1.0",
   "websiteUrl": "https://linkpreflight.dev",
+  "repository": { "url": "https://github.com/linkpreflight/linkpreflight", "source": "github" },
   "remotes": [{ "type": "streamable-http", "url": "https://linkpreflight.dev/mcp" }]
 }
