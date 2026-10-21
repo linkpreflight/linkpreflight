@@ -1,0 +1,15 @@
+{
+  "name": "linkpreflight",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "homepage": "https://linkpreflight.dev",
+  "description": "LinkPreflight: one call to check whether a URL is safe, alive, and what it is.",
+  "scripts": {
+    "dev": "tsx scripts/dev-server.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx scripts/smoke.ts"
+  },
+  "engines": { "node": ">=20" },
+  "devDependencies": { "@types/node": "^20.14.0", "tsx": "^4.19.0", "typescript": "^5.6.0" }
+}

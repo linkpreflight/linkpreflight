@@ -1,0 +1,60 @@
+{
+  "rewrites": [
+    {
+      "source": "/mcp",
+      "destination": "/api/mcp"
+    },
+    {
+      "source": "/v1/preflight",
+      "destination": "/api/preflight"
+    },
+    {
+      "source": "/success",
+      "destination": "/api/success"
+    },
+    {
+      "source": "/stripe/webhook",
+      "destination": "/api/stripe-webhook"
+    }
+  ],
+  "functions": {
+    "api/*.ts": {
+      "maxDuration": 30
+    }
+  },
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.linkpreflight.dev"
+        }
+      ],
+      "destination": "https://linkpreflight.dev/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "linkpreflight.vercel.app"
+        }
+      ],
+      "destination": "https://linkpreflight.dev/",
+      "permanent": true
+    },
+    {
+      "source": "/:page(terms.html|llms.txt|index.html)",
+      "has": [
+        {
+          "type": "host",
+          "value": "linkpreflight.vercel.app"
+        }
+      ],
+      "destination": "https://linkpreflight.dev/:page",
+      "permanent": true
+    }
+  ]
+}

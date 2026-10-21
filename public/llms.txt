@@ -1,0 +1,17 @@
+# LinkPreflight
+
+> One call that tells an AI agent whether a URL is safe, alive, and what it is, before the agent clicks, cites, or fetches it.
+
+## API
+- [GET /v1/preflight?url=URL](https://linkpreflight.dev/v1/preflight?url=example.com): JSON with verdict (ok|dead|parked|unsafe|blocked|error), status, redirects[], final_url, content_type, content_length, dead_reason, parked, llms_txt.exists, safety.listed, safety.heuristic_flags
+- POST /v1/preflight with body {"url": "..."} does the same thing
+
+## MCP
+- [Remote MCP endpoint](https://linkpreflight.dev/mcp): Streamable HTTP, tool `preflight(url)`
+
+## Limits
+- Free: 200 checks/day per IP. Over the limit you get HTTP 429 with `payment_link` for a credit pack. Buy directly: https://buy.stripe.com/5kQ28reB4ar7b5Dbp76g800
+- Private/internal targets are refused (verdict "blocked"). Each hop has a 6 s timeout, with at most 10 redirects.
+
+## Legal
+- [Terms](https://linkpreflight.dev/terms.html): operated by LinkPreflight
