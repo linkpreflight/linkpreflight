@@ -15,3 +15,7 @@
 
 ## Legal
 - [Terms](https://linkpreflight.dev/terms.html): operated by LinkPreflight
+
+## Pairs well with
+- [Clearcrawl](https://agentreader.onrender.com): sister studio MCP server. After a URL passes preflight, use Clearcrawl to extract it as clean markdown/JSON.
+- [VibePicks](https://vibepicks.dev): sister studio picks for AI dev tools.
