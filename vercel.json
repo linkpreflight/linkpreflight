@@ -15,6 +15,10 @@
     {
       "source": "/stripe/webhook",
       "destination": "/api/stripe-webhook"
+    },
+    {
+      "source": "/health",
+      "destination": "/api/health"
     }
   ],
   "functions": {
