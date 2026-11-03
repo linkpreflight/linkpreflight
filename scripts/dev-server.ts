@@ -1,8 +1,9 @@
 import http from "node:http"; import fs from "node:fs"; import path from "node:path";
-import pre from "../api/preflight.js"; import mcp from "../api/mcp.js"; import wh from "../api/stripe-webhook.js"; import ok from "../api/success.js";
+import health from "../api/health.js"; import pre from "../api/preflight.js"; import mcp from "../api/mcp.js"; import wh from "../api/stripe-webhook.js"; import ok from "../api/success.js";
 const port = Number(process.env.PORT || 3000);
 http.createServer(async (req, res) => {
   const p = new URL(req.url || "/", "http://x").pathname;
+  if (p === "/health" || p === "/api/health") return health(req, res);
   if (p === "/v1/preflight" || p === "/api/preflight") return pre(req, res);
   if (p === "/stripe/webhook") return wh(req, res);
   if (p === "/success") return ok(req, res);
